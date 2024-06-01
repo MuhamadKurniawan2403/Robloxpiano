@@ -1,0 +1,24 @@
+document.getElementById("social").innerHTML += `
+        <div style="position: absolute; right: 10px; top: 20px">
+            <div id="FileDrop">
+                <div id="Text">
+                    Drop a midi file here
+                </div>
+                <input type="file" accept="audio/midi">
+            </div>
+            <button onclick='
+                if(this.innerHTML == "Play"){
+                    autoPlayer(midiJSONobject)
+                    this.innerHTML = "Stop"
+                } else {
+                    stopAutoPlay()
+                    this.innerHTML = "Play"
+                }
+            '>Play</button>
+            <div id="Results" style="pointer-events: none; opacity: 0;">
+                <textarea id="ResultsText" placeholder="json output..."></textarea>
+            </div>
+        </div>`
+ 
+var scriptContent = `
+var midiJSONobject;
